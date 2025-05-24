@@ -1,48 +1,516 @@
+<!DOCTYPE html>
 <html>
-     <head>
-           <title> Film Explore </title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Film Explore</title>
 
-           <style>
-               body {
-                background-color: black;
-                color: azure;
-               }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000 url('oip28.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .auth-buttons {
+      margin-top: 10px;
+    }
+    .auth-buttons button {
+      margin: 5px;
+      padding: 8px 16px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #ff9800;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .auth-buttons button:hover {
+      background-color: #e68900;
+    }
+    .search-bar {
+      padding: 20px;
+      text-align: center;
+      background: rgba(34, 34, 34, 0.9);
+    }
+    .search-bar input,
+    .search-bar select {
+      margin: 10px;
+      width: 60%;
+      max-width: 400px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .card {
+      background: #2a2a2a;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+    }
+    .card-title {
+      padding: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  
 
-           </style>
-     </head>
-     <body>
-        
-           <h1>
-              Film Explore
-           </h1> 
-               <pre>
-                                                                                                                                                                                             <button type="submit">Sign in</button> <button type="submit">Login</button>
-               </pre>
-           <hr>
-     
-                
-               <pre>
-                                                                                                                                                                                                  <button type="submit">See All</button><br>
-                                <a href="http://127.0.0.1:5500/nm.html"> <img src="Untitled-1 copy.png" height="250"title="Sonic 3"></a> <a href="http://127.0.0.1:5500/fgd.html"> <img src="Untitled-11.png" height="250"title="Kung Fu Panda 4"></a>          <a href="http://127.0.0.1:5500/5.html"><img src="Gc=.jpg" height="240"title="Minecraft Movie"></a>           <a href="http://127.0.0.1:5500/56.html"><img src="Un1titled-11.png" height="250"title="Transformers One"></a>
-               </pre> 
-                  <h1>
-                    <pre>
-                        <b>Sonic 3          Kung Fu Panda 4      Minecraft Movie      Transformers One</b> 
-                    </pre>
-                  </h1>
-               <pre>
-                                                                                                                                                                                                 .
-                                                                                                                                                                                                  <button type="submit">See All</button><br>
-                                 <img src="Untitled-1 copy.png" height="250"title="Sonic 3">  <img src="Untitled-1 copy.png" height="250"title="Sonic 3">  <img src="Untitled-1 copy.png" height="250"title="Sonic 3">  <img src="Untitled-1 copy.png" height="250"title="Sonic 3">
-               </pre> 
-                  <h1>
-                    <pre>
-                        <b>Sonic 3          Kung Fu Panda 4      Minecraft Movie      Transformers One</b> 
-                    </pre>
-                  </h1>
+  <header>
+    <div class="header-title">Film Explore</div>
+    <div class="auth-buttons">
+      <button onclick="window.location.href='signin.html'">Login</button>
+      <button onclick="window.location.href='register.html'">Register</button>
+    </div>
+  </header>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search movies...">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="sonic">Sonic</option>
+      <option value="kungfu">Kung Fu Panda</option>
+      <option value="transformers">Transformers</option>
+      <option value="minecraft">Minecraft</option>
+      <option value="thor">Thor</option>
+      <option value="spiderman">Spider-Man</option>
+      <option value="avengers">Avengers</option>
+      <option value="harrypotter">Harry Potter</option>
+      <option value="xmen">X-men</option>
+      <option value="venom">Venom</option>
+      <option value="ironman">Iron Man</option>
+      <option value="captain">Captain America</option>
+      <option value="doctorstrange">Doctor Strange</option>
+      <option value="guardians">Guardians of the Galaxy</option>
+    </select>
+  </div>
+
+  <div class="content-grid">
+    <a href="sonic 3.html">
+      <div class="card" data-title="Sonic 3" data-category="sonic">
+        <img src="oip56.png" alt="Sonic 3">
+        <div class="card-title">Sonic 3</div>
+      </div>
+    </a>
+
+        <a href="sonic 2.html">
+      <div class="card" data-title="Sonic 2" data-category="sonic">
+        <img src="oip1.jpg" alt="Sonic 2">
+        <div class="card-title">Sonic 2</div>
+      </div>
+    </a>
+
+    <a href="minecraft.html">
+      <div class="card" data-title="Minecraft Movie" data-category="minecraft">
+        <img src="oip58.jpg" alt="Minecraft Movie">
+        <div class="card-title">Minecraft Movie</div>
+      </div>
+    </a>
+
+    <a href="kfp1.html">
+      <div class="card" data-title="Kung Fu Panda 1" data-category="kungfu">
+        <img src="oip59.jpg" alt="Kung Fu Panda 1">
+        <div class="card-title">Kung Fu Panda 1</div>
+      </div>
+    </a>
+
+    <a href="kfp2.html">
+      <div class="card" data-title="Kung Fu Panda 2" data-category="kungfu">
+        <img src="oip27.jpeg" alt="Kung Fu Panda 2">
+        <div class="card-title">Kung Fu Panda 2</div>
+      </div>
+    </a>
+
+        <a href="kfp3.html">
+      <div class="card" data-title="Kung Fu Panda 3" data-category="kungfu">
+        <img src="oip25.jpeg" alt="Kung Fu Panda 3">
+        <div class="card-title">Kung Fu Panda 3</div>
+      </div>
+    </a>
+
+        <a href="kung fu panda.html">
+      <div class="card" data-title="Kung Fu Panda 4" data-category="kungfu">
+        <img src="oip16.jpg" alt="Kung Fu Panda 4">
+        <div class="card-title">Kung Fu Panda 4</div>
+      </div>
+    </a>
+
+<a href="avengers1.html">
+  <div class="card" data-title="Transformers 2" data-category="transformers">
+    <img src="oip61.jpg" alt="Transformers 2">
+    <div class="card-title">Transformers 2</div>
+  </div>
+</a>
+
+
+    <a href="transformers2.html">
+      <div class="card" data-title="Transformers 2" data-category="transformers">
+        <img src="oip61.jpg" alt="Transformers 2">
+        <div class="card-title">Transformers 2</div>
+      </div>
+    </a>
+
+    <a href="transformers3.html">
+      <div class="card" data-title="Transformers 3" data-category="transformers">
+        <img src="oip62.jpg" alt="Transformers 3">
+        <div class="card-title">Transformers 3</div>
+      </div>
+    </a>
+
+
+        <a href="TransformersRiseOfTheBeast.html">
+      <div class="card" data-title="Transformers Rise of the Beast" data-category="transformers">
+        <img src="oip9.jpg" alt="Transformers Rise of the Beast">
+        <div class="card-title">Transformers Rise of the Beast</div>
+      </div>
+    </a>
+
+    <a href="transformers4.html">
+      <div class="card" data-title="Transformers 4" data-category="transformers">
+        <img src="oip63.jpg" alt="Transformers 4">
+        <div class="card-title">Transformers 4</div>
+      </div>
+    </a>
+    
+
+    <a href="transformers5.html">
+      <div class="card" data-title="Transformers 5" data-category="transformers">
+        <img src="oip26.jpeg" alt="Transformers 5">
+        <div class="card-title">Transformers 5</div>
+      </div>
+    </a>
+
+    <a href="transeformes one.html">
+      <div class="card" data-title="Transformers One" data-category="transformers">
+        <img src="oip55.png" alt="Transformers One">
+        <div class="card-title">Transformers One</div>
+      </div>
+    </a>
+
+        <!-- Avengers Series -->
+<a href="avengers1.html">
+  <div class="card" data-title="Avengers 1" data-category="avengers">
+    <img src="oip22.jpg" alt="Avengers 1">
+    <div class="card-title">Avengers</div>
+  </div>
+</a>
+<a href="avengers2.html">
+  <div class="card" data-title="Avengers: Age of Ultron" data-category="avengers">
+    <img src="oip30.jpg" alt="Avengers 2">
+    <div class="card-title">Avengers: Age of Ultron</div>
+  </div>
+</a>
+<a href="avengers3.html">
+  <div class="card" data-title="Avengers: Infinity War" data-category="avengers">
+    <img src="oip19.jpg" alt="Infinity War">
+    <div class="card-title">Avengers: Infinity War</div>
+  </div>
+</a>
+<a href="avengers4.html">
+  <div class="card" data-title="Avengers: Endgame" data-category="avengers">
+    <img src="oip14.jpg" alt="Endgame">
+    <div class="card-title">Avengers: Endgame</div>
+  </div>
+</a>
+
+<!-- Spider-Man (Tom Holland) -->
+<a href="spidermanhomecoming.html">
+  <div class="card" data-title="Spider-Man: Homecoming" data-category="spiderman">
+    <img src="oip41.jpeg" alt="Spider-Man Homecoming">
+    <div class="card-title">Spider-Man: Homecoming</div>
+  </div>
+</a>
+<a href="spidermanfar.html">
+  <div class="card" data-title="Spider-Man: Far From Home" data-category="spiderman">
+    <img src="oip42.jpeg" alt="Far From Home">
+    <div class="card-title">Spider-Man: Far From Home</div>
+  </div>
+</a>
+<a href="spidermannoway.html">
+  <div class="card" data-title="Spider-Man: No Way Home" data-category="spiderman">
+    <img src="oip15.jpg" alt="No Way Home">
+    <div class="card-title">Spider-Man: No Way Home</div>
+  </div>
+</a>
+
+<!-- Iron Man Series -->
+<a href="ironman1.html">
+  <div class="card" data-title="Iron Man 1" data-category="ironman">
+    <img src="oip43.jpeg" alt="Iron Man 1">
+    <div class="card-title">Iron Man</div>
+  </div>
+</a>
+<a href="ironman2.html">
+  <div class="card" data-title="Iron Man 2" data-category="ironman">
+    <img src="oip45.jpg" alt="Iron Man 2">
+    <div class="card-title">Iron Man 2</div>
+  </div>
+</a>
+<a href="https://www.Netflix.com/movies/the-avengers/1R8qP6zfMFzH" target="_blank">Watch The Avengers on neflix>
+  <div class="card" data-title="Iron Man 3" data-category="ironman">
+    <img src="oip47.jpg" alt="Iron Man 3">
+    <div class="card-title">Iron Man 3</div>
+  </div>
+</a>
+
+<!-- Captain America Series -->
+<a href="captain1.html">
+  <div class="card" data-title="Captain America: The First Avenger" data-category="captain">
+    <img src="oip6.jpg" alt="Captain America 1">
+    <div class="card-title">Captain America: The First Avenger</div>
+  </div>
+</a>
+<a href="captain2.html">
+  <div class="card" data-title="Captain America: The Winter Soldier" data-category="captain">
+    <img src="oip54.jpg" alt="Winter Soldier">
+    <div class="card-title">Captain America: Winter Soldier</div>
+  </div>
+</a>
+<a href="captain3.html">
+  <div class="card" data-title="Captain America: Civil War" data-category="captain">
+    <img src="oip31.jpg" alt="Civil War">
+    <div class="card-title">Captain America: Civil War</div>
+  </div>
+</a>
+
+<!-- Guardians of the Galaxy -->
+<a href="gotg1.html">
+  <div class="card" data-title="Guardians of the Galaxy" data-category="guardians">
+    <img src="oip39.jpg" alt="Guardians of the Galaxy">
+    <div class="card-title">Guardians of the Galaxy</div>
+  </div>
+</a>
+<a href="gotg2.html">
+  <div class="card" data-title="Guardians of the Galaxy Vol. 2" data-category="guardians">
+    <img src="oip20.jpeg" alt="Guardians Vol. 2">
+    <div class="card-title">Guardians Vol. 2</div>
+  </div>
+</a>
+<a href="gotg3.html">
+  <div class="card" data-title="Guardians of the Galaxy Vol. 3" data-category="guardians">
+    <img src="oip36.jpg" alt="Guardians Vol. 3">
+    <div class="card-title">Guardians Vol. 3</div>
+  </div>
+</a>
+
+<!-- Doctor Strange -->
+<a href="drstrange1.html">
+  <div class="card" data-title="Doctor Strange" data-category="doctorstrange">
+    <img src="oip29.jpg" alt="Doctor Strange">
+    <div class="card-title">Doctor Strange</div>
+  </div>
+</a>
+<a href="drstrange2.html">
+  <div class="card" data-title="Doctor Strange: Multiverse of Madness" data-category="doctorstrange">
+    <img src="oip34.webp" alt="Multiverse of Madness">
+    <div class="card-title">Doctor Strange 2</div>
+  </div>
+</a>
+
+<!-- Thor Series -->
+<a href="thor1.html">
+  <div class="card" data-title="Thor" data-category="thor">
+    <img src="oip53.jpg" alt="Thor 1">
+    <div class="card-title">Thor</div>
+  </div>
+</a>
+<a href="thor2.html">
+  <div class="card" data-title="Thor: The Dark World" data-category="thor">
+    <img src="oip23.jpg" alt="Thor 2">
+    <div class="card-title">Thor: The Dark World</div>
+  </div>
+</a>
+<a href="thor3.html">
+  <div class="card" data-title="Thor: Ragnarok" data-category="thor">
+    <img src="oip32.jpg" alt="Thor Ragnarok">
+    <div class="card-title">Thor: Ragnarok</div>
+  </div>
+</a>
+<a href="thor4.html">
+  <div class="card" data-title="Thor: Love and Thunder" data-category="thor">
+    <img src="oip12.jpg" alt="Love and Thunder">
+    <div class="card-title">Thor: Love and Thunder</div>
+  </div>
+</a>
+
+<!-- X-Men Series -->
+<a href="xmen1.html">
+  <div class="card" data-title="X-Men" data-category="xmen">
+    <img src="oip21.jpg" alt="X-Men 1">
+    <div class="card-title">X-Men</div>
+  </div>
+</a>
+<a href="xmen2.html">
+  <div class="card" data-title="X2: X-Men United" data-category="xmen">
+    <img src="oip5.webp" alt="X2">
+    <div class="card-title">X2: X-Men United</div>
+  </div>
+</a>
+<a href="xmen3.html">
+  <div class="card" data-title="X-Men: The Last Stand" data-category="xmen">
+    <img src="oip13.jpg" alt="X-Men 3">
+    <div class="card-title">X-Men: The Last Stand</div>
+  </div>
+</a>
+<a href="xmen4.html">
+  <div class="card" data-title="X-Men: First Class" data-category="xmen">
+    <img src="oip49.jpg" alt="First Class">
+    <div class="card-title">X-Men: First Class</div>
+  </div>
+</a>
+<a href="xmen5.html">
+  <div class="card" data-title="X-Men: Days of Future Past" data-category="xmen">
+    <img src="oip51.jpg" alt="Days of Future Past">
+    <div class="card-title">Days of Future Past</div>
+  </div>
+</a>
+<a href="xmen6.html">
+  <div class="card" data-title="X-Men: Apocalypse" data-category="xmen">
+    <img src="oip50.jpg" alt="Apocalypse">
+    <div class="card-title">X-Men: Apocalypse</div>
+  </div>
+</a>
+
+<!-- Venom Series -->
+<a href="venom1.html">
+  <div class="card" data-title="Venom" data-category="venom">
+    <img src="oip3.jpg" alt="Venom 1">
+    <div class="card-title">Venom</div>
+  </div>
+</a>
+
+    <a href="venom2.html">
+      <div class="card" data-title="Venom 2" data-category="venom">
+        <img src="oip2.jpg" alt="Venom 2">
+        <div class="card-title">Venom 2</div>
+      </div>
+    </a>
 
 
 
-     </body>
+<!-- Harry Potter Series -->
+<a href="hp1.html">
+  <div class="card" data-title="Harry Potter and the Philosopher's Stone" data-category="harrypotter">
+    <img src="oip24.webp" alt="HP 1">
+    <div class="card-title">Harry Potter 1</div>
+  </div>
+</a>
+<a href="hp2.html">
+  <div class="card" data-title="Harry Potter and the Chamber of Secrets" data-category="harrypotter">
+    <img src="oip38.jpg" alt="HP 2">
+    <div class="card-title">Harry Potter 2</div>
+  </div>
+</a>
+<a href="hp3.html">
+  <div class="card" data-title="Harry Potter and the Prisoner of Azkaban" data-category="harrypotter">
+    <img src="oip10.jpg" alt="HP 3">
+    <div class="card-title">Harry Potter 3</div>
+  </div>
+</a>
+<a href="hp4.html">
+  <div class="card" data-title="Harry Potter and the Goblet of Fire" data-category="harrypotter">
+    <img src="oip33.jpg" alt="HP 4">
+    <div class="card-title">Harry Potter 4</div>
+  </div>
+</a>
+<a href="hp5.html">
+  <div class="card" data-title="Harry Potter and the Order of the Phoenix" data-category="harrypotter">
+    <img src="oip.jpg" alt="HP 5">
+    <div class="card-title">Harry Potter 5</div>
+  </div>
+</a>
+<a href="hp6.html">
+  <div class="card" data-title="Harry Potter and the Half-Blood Prince" data-category="harrypotter">
+    <img src="oip11.jpg" alt="HP 6">
+    <div class="card-title">Harry Potter 6</div>
+  </div>
+</a>
+<a href="hp7.html">
+  <div class="card" data-title="Harry Potter and the Deathly Hallows: Part 1" data-category="harrypotter">
+    <img src="oip8.jpg" alt="HP 7">
+    <div class="card-title">Harry Potter 7</div>
+  </div>
+</a>
+<a href="hp8.html">
+  <div class="card" data-title="Harry Potter and the Deathly Hallows: Part 2" data-category="harrypotter">
+    <img src="oip37.jpg" alt="HP 8">
+    <div class="card-title">Harry Potter 8</div>
+  </div>
+</a>
 
+    </div>
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const categoryFilter = document.getElementById('categoryFilter');
+  const cards = document.querySelectorAll('.card');
+
+  function filterCards() {
+    const search = searchInput.value.toLowerCase();
+    const category = categoryFilter.value;
+
+    cards.forEach(card => {
+      const title = card.getAttribute('data-title').toLowerCase();
+      const cardCategory = card.getAttribute('data-category');
+      const matchesSearch = title.includes(search);
+      const matchesCategory = category === 'all' || cardCategory === category;
+
+      if (matchesSearch && matchesCategory) {
+        card.parentElement.style.display = 'block';
+      } else {
+        card.parentElement.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', filterCards);
+  categoryFilter.addEventListener('change', filterCards);
+</script>
+
+
+<br><br><br><br><br><footer style="text-align:center; padding: 20px; background: rgba(0,0,0,0.6);">
+  <a href="privacy.html" style="color:#ff9800; margin-right: 15px;">Privacy Policy</a>
+  <a href="terms.html" style="color:#ff9800; margin-right: 15px;">Terms of Service</a>
+  <a href="contact.html" style="color:#ff9800;">Contact Us</a>
+   </footer>
+
+  </div>
+
+</body>
 </html>
+'
