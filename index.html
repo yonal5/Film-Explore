@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Film Explore - Sonic and Avengers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+    }
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .filter-buttons {
+      text-align: center;
+      margin: 20px;
+    }
+    .filter-buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background-color: #555;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .filter-buttons button:hover {
+      background-color: #777;
+    }
+    .movie-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background-color: rgb(0, 102, 255);
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .card-title {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Film Explore - Sonic and Avengers</h1>
+</div>
+
+
+
+<div class="movie-container">
+
+  <!-- Sonic Movies -->
+  <a href="sonic 3.html">
+    <div class="card" data-title="Sonic 3" data-category="sonic">
+      <img src="oip56.png" alt="Sonic 3">
+      <div class="card-title">Sonic 3</div>
+    </div>
+  </a>
+
+
+  <a href="sonic 2.html">
+    <div class="card" data-title="Sonic 2 " data-category="sonic">
+      <img src="oip1.jpg" alt="Sonic 2">
+      <div class="card-title">Sonic 2</div>
+    </div>
+  </a>
+
+
+  <a href="soin/sonic 1.html">
+    <div class="card" data-title="Sonic 1" data-category="sonic">
+      <img src="image.jpg" alt="Sonic 1">
+      <div class="card-title">Sonic 1</div>
+    </div>
+  </a>
+
+
+</div>
+
+<script>
+  function filterCards(category) {
+    var cards = document.querySelectorAll('.card');
+    cards.forEach(function(card) {
+      if (category === 'all' || card.dataset.category === category) {
+        card.parentElement.style.display = 'block';
+      } else {
+        card.parentElement.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
